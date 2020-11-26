@@ -1,12 +1,6 @@
+package Base
+
 import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.selects.select
-import java.io.IOException
-import java.lang.ArithmeticException
-import java.lang.AssertionError
-import java.util.concurrent.atomic.AtomicInteger
-import kotlin.random.Random
-import kotlin.system.measureTimeMillis
 
 /**
  * Copyright: ETU (Beijing) Education Technology Co., Ltd. All rights reserved.
@@ -27,7 +21,7 @@ fun main(args: Array<String>) {
 }
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    launch {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} World!")
@@ -37,7 +31,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch(Dispatchers.IO) {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} World!")
@@ -48,7 +42,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch(Dispatchers.IO) {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} World!")
@@ -59,7 +53,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val jobs = List(100_000) {
 //        launch {
 //            delay(1000L)
@@ -73,7 +67,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() {
+//fun base.main() {
 //    val job = GlobalScope.async {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} : World")
@@ -87,7 +81,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    GlobalScope.launch {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} : World")
@@ -100,7 +94,7 @@ fun main(args: Array<String>) {
 
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    launch {
 //        delay(1000L)
 //        println("${Thread.currentThread().name} : launch")
@@ -118,7 +112,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    launch {
 //        doWorld()
 //    }
@@ -131,7 +125,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    repeat(100) {
 //        println("${Thread.currentThread().name} $it")
 //        delay(500L)
@@ -141,7 +135,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch {
 //        repeat(100) {
 //            println("${Thread.currentThread().name} $it")
@@ -156,7 +150,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val startTime = System.currentTimeMillis()
 //    val job = launch(Dispatchers.Default) {
 //        var nextPrintTime = startTime
@@ -170,13 +164,13 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    delay(1300L) // delay a bit
-//    println("main: I'm tired of waiting!")
+//    println("base.main: I'm tired of waiting!")
 //    job.cancelAndJoin() // cancels the job and waits for its completion
-//    println("main: Now I can quit.")
+//    println("base.main: Now I can quit.")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val startTime = System.currentTimeMillis()
 //    val job = launch(Dispatchers.Default) {
 //        var nextPrintTime = startTime
@@ -190,13 +184,13 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    delay(1300L) // delay a bit
-//    println("main: I'm tired of waiting!")
+//    println("base.main: I'm tired of waiting!")
 //    job.cancelAndJoin() // cancels the job and waits for its completion
-//    println("main: Now I can quit.")
+//    println("base.main: Now I can quit.")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch {
 //        try {
 //            repeat(1000) {
@@ -208,14 +202,14 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    delay(1300L)
-//    println("main: I'm tired of waiting!")
+//    println("base.main: I'm tired of waiting!")
 //    //job.cancel()
 //    job.cancelAndJoin() // cancels the job and waits for its completion
-//    println("main: Now I can quit.")
+//    println("base.main: Now I can quit.")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch {
 //        try {
 //            repeat(1000) { i ->
@@ -231,13 +225,13 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    delay(1300L) // delay a bit
-//    println("main: I'm tired of waiting!")
+//    println("base.main: I'm tired of waiting!")
 //    job.cancelAndJoin() // cancels the job and waits for its completion
-//    println("main: Now I can quit.")
+//    println("base.main: Now I can quit.")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    withTimeout(1300L) {
 //        repeat(1000) {
 //            println("I'm sleeping $it ...")
@@ -247,7 +241,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    try {
 //        withTimeout(1300L) {
 //            repeat(1000) {
@@ -261,7 +255,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val result = withTimeoutOrNull(1300L) {
 //        repeat(1000) {
 //            println("I'm sleeping $it ...")
@@ -273,7 +267,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val result = withTimeoutOrNull(1300L) {
 //        repeat(2) {
 //            println("I'm sleeping $it ...")
@@ -285,7 +279,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val channel = Channel<Int>()
 //    launch {
 //        // this might be heavy CPU-consuming computation or async logic, we'll just send five squares
@@ -297,7 +291,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val channel = Channel<Int>()
 //    launch {
 //        for (x in 1..5) channel.send(x * x)
@@ -313,7 +307,7 @@ fun main(args: Array<String>) {
 //fun CoroutineScope.produceSquares1(): ReceiveChannel<Int> = produce {
 //    for (x in 1..5) send(x * x)
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val squares = produceSquares1()
 //    squares.consumeEach { println(it) }
 //    println("Done!")
@@ -327,7 +321,7 @@ fun main(args: Array<String>) {
 //fun CoroutineScope.square(numbers: ReceiveChannel<Int>): ReceiveChannel<Int> = produce {
 //    for (x in numbers) send(x * x)
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val numbers = produceNumbers() // produces integers from 1 and on
 //    val squares = square(numbers) // squares integers
 //    for (i in 1..5) println(squares.receive()) // print first five
@@ -343,14 +337,14 @@ fun main(args: Array<String>) {
 //fun CoroutineScope.filter(numbers: ReceiveChannel<Int>, prime: Int) = produce<Int> {
 //    for (x in numbers) if (x % prime != 0) send(x)
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    var cur = numbersFrom(2)
 //    for (i in 1..10) {
 //        val prime = cur.receive()
 //        println(prime)
 //        cur = filter(cur, prime)
 //    }
-//    coroutineContext.cancelChildren() // cancel all children to let main finish
+//    coroutineContext.cancelChildren() // cancel all children to let base.main finish
 //}
 
 ////-----------------------------------------------------------------
@@ -362,7 +356,7 @@ fun main(args: Array<String>) {
 //    delay(2000L)
 //    return 29
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val time = measureTimeMillis {
 //        val one = doSomethingUsefulOne()
 //        val two = doSomethingUsefulTwo()
@@ -380,7 +374,7 @@ fun main(args: Array<String>) {
 //    delay(2000L)
 //    return 29
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val time = measureTimeMillis {
 //        val one = async { doSomethingUsefulOne()}.await()
 //        val two = async { doSomethingUsefulTwo()}.await()
@@ -398,7 +392,7 @@ fun main(args: Array<String>) {
 //    delay(2000L)
 //    return 29
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val time = measureTimeMillis {
 //        val one = async { doSomethingUsefulOne()}
 //        val two = async { doSomethingUsefulTwo()}
@@ -416,7 +410,7 @@ fun main(args: Array<String>) {
 //    delay(2000L)
 //    return 29
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val time = measureTimeMillis {
 //        val one = async(start = CoroutineStart.LAZY) { doSomethingUsefulOne() }
 //        val two = async(start = CoroutineStart.LAZY) { doSomethingUsefulTwo() }
@@ -445,7 +439,7 @@ fun main(args: Array<String>) {
 //fun somethingUsefulTwoAsync() = GlobalScope.async {
 //    doSomethingUsefulTwo()
 //}
-//fun main(){
+//fun base.main(){
 //    val time = measureTimeMillis {
 //        val one = somethingUsefulOneAsync()
 //        val two = somethingUsefulTwoAsync()
@@ -478,7 +472,7 @@ fun main(args: Array<String>) {
 //    val two = somethingUsefulTwoAsync()
 //    one.await() + two.await()
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val time = measureTimeMillis {
 //        println("The answer is ${concurrentSum()}")
 //    }
@@ -501,7 +495,7 @@ fun main(args: Array<String>) {
 //    }
 //    one.await() + two.await()
 //}
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    try {
 //        failedConcurrentSum()
 //    } catch (e: ArithmeticException) {
@@ -510,11 +504,11 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking<Unit> {
-//    launch { // context of the parent, main runBlocking coroutine
-//        println("main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
+//fun base.main() = runBlocking<Unit> {
+//    launch { // context of the parent, base.main runBlocking coroutine
+//        println("base.main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
 //    }
-//    launch(Dispatchers.Unconfined) { // not confined -- will work with main thread
+//    launch(Dispatchers.Unconfined) { // not confined -- will work with base.main thread
 //        println("Unconfined            : I'm working in thread ${Thread.currentThread().name}")
 //    }
 //    launch(Dispatchers.Default) { // will get dispatched to DefaultDispatcher
@@ -526,11 +520,11 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main()  = runBlocking<Unit>(Dispatchers.IO){
-//    launch { // context of the parent, main runBlocking coroutine
-//        println("main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
+//fun base.main()  = runBlocking<Unit>(Dispatchers.IO){
+//    launch { // context of the parent, base.main runBlocking coroutine
+//        println("base.main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
 //    }
-//    launch(Dispatchers.Unconfined) { // not confined -- will work with main thread
+//    launch(Dispatchers.Unconfined) { // not confined -- will work with base.main thread
 //        println("Unconfined            : I'm working in thread ${Thread.currentThread().name}")
 //    }
 //    launch(Dispatchers.Default) { // will get dispatched to DefaultDispatcher
@@ -542,22 +536,22 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking<Unit> {
-//    launch(Dispatchers.Unconfined) { // not confined -- will work with main thread
+//fun base.main() = runBlocking<Unit> {
+//    launch(Dispatchers.Unconfined) { // not confined -- will work with base.main thread
 //        println("Unconfined      : I'm working in thread ${Thread.currentThread().name}")
 //        delay(500)
 //        println("Unconfined      : After delay in thread ${Thread.currentThread().name}")
 //    }
-//    launch { // context of the parent, main runBlocking coroutine
-//        println("main runBlocking: I'm working in thread ${Thread.currentThread().name}")
+//    launch { // context of the parent, base.main runBlocking coroutine
+//        println("base.main runBlocking: I'm working in thread ${Thread.currentThread().name}")
 //        delay(1000)
-//        println("main runBlocking: After delay in thread ${Thread.currentThread().name}")
+//        println("base.main runBlocking: After delay in thread ${Thread.currentThread().name}")
 //    }
 //}
 
 ////-----------------------------------------------------------------
 //fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    val a = async {
 //        log("I'm computing a piece of the answer")
 //        6
@@ -571,7 +565,7 @@ fun main(args: Array<String>) {
 
 ////-----------------------------------------------------------------
 //fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    newSingleThreadContext("Ctx1").use { ctx1 ->
 //        newSingleThreadContext("Ctx2").use { ctx2 ->
 //            runBlocking(ctx1) {
@@ -587,7 +581,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    // launch a coroutine to process some kind of incoming request
 //    val request = launch {
 //        // it spawns two other jobs, one with GlobalScope
@@ -607,11 +601,11 @@ fun main(args: Array<String>) {
 //    delay(500)
 //    request.cancel() // cancel processing of the request
 //    delay(1000) // delay a second to see what happens
-//    println("main: Who has survived request cancellation?")
+//    println("base.main: Who has survived request cancellation?")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    // launch a coroutine to process some kind of incoming request
 //    val request = launch {
 //        // it spawns two other jobs, one with GlobalScope
@@ -639,13 +633,13 @@ fun main(args: Array<String>) {
 //    delay(500)
 //    request.cancel() // cancel processing of the request
 //    delay(1000) // delay a second to see what happens
-//    println("main: Who has survived request cancellation?")
+//    println("base.main: Who has survived request cancellation?")
 //}
 
 ////-----------------------------------------------------------------
 //fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
-//fun  main() = runBlocking {
-//    log("Started main coroutine")
+//fun  base.main() = runBlocking {
+//    log("Started base.main coroutine")
 //// run two background value computations
 //    val v1 = async(CoroutineName("v1coroutine")) {
 //        delay(500)
@@ -661,7 +655,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    launch(Dispatchers.Default + CoroutineName("test")) {
 //        println("I'm working in thread ${Thread.currentThread().name}")
 //    }
@@ -669,20 +663,20 @@ fun main(args: Array<String>) {
 
 ////-----------------------------------------------------------------
 //val threadLocal = ThreadLocal<String?>() // declare thread-local variable
-//fun main() = runBlocking<Unit> {
-//    threadLocal.set("main")
-//    println("Pre-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
+//fun base.main() = runBlocking<Unit> {
+//    threadLocal.set("base.main")
+//    println("Pre-base.main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
 //    val job = launch(Dispatchers.Default + threadLocal.asContextElement(value = "launch")) {
 //        println("Launch start, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
 //        yield()
 //        println("After yield, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
 //    }
 //    job.join()
-//    println("Post-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
+//    println("Post-base.main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = GlobalScope.launch(CoroutineName("launch")) {
 //        println("Throwing exception from launch")
 //        throw IndexOutOfBoundsException() // Will be printed to the console by Thread.defaultUncaughtExceptionHandler
@@ -702,7 +696,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val handler = CoroutineExceptionHandler { _, throwable ->
 //        println("Caught $throwable")
 //    }
@@ -716,7 +710,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val job = launch {
 //        val child = launch {
 //            try {
@@ -736,7 +730,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val handler = CoroutineExceptionHandler { _, exception ->
 //        println("Caught $exception")
 //    }
@@ -762,7 +756,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val handler = CoroutineExceptionHandler { _, exception ->
 //        println("Caught $exception with suppressed ${exception.suppressed.contentToString()}")
 //    }
@@ -785,7 +779,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val handler = CoroutineExceptionHandler { _, exception ->
 //        println("Caught original $exception")
 //    }
@@ -808,7 +802,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val supervisor = SupervisorJob()
 //    with(CoroutineScope(coroutineContext + supervisor)) {
 //        // launch the first child -- its exception is ignored for this example (don't do this in practice!)
@@ -837,7 +831,7 @@ fun main(args: Array<String>) {
 //}
 
 ////-----------------------------------------------------------------
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    try {
 //        supervisorScope {
 //            val child = launch {
@@ -881,7 +875,7 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val fizz = fizz()
 //    val buzz = buzz()
 //    repeat(7) {
@@ -906,7 +900,7 @@ fun main(args: Array<String>) {
 //                "b -> '$value'"
 //        }
 //    }
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val a = produce<String> {
 //        repeat(4) { send("Hello $it") }
 //    }
@@ -928,7 +922,7 @@ fun main(args: Array<String>) {
 //    val random = Random(3)
 //    return List(12) { asyncString(random.nextInt(1000)) }
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val list = asyncStringsList()
 //    val result = select<String> {
 //        list.withIndex().forEach { (index, deferred) ->
@@ -958,7 +952,7 @@ fun main(args: Array<String>) {
 //}
 //@Volatile // in Kotlin `volatile` is an annotation
 //var counter = 0
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    GlobalScope.massiveRun1 {
 //        counter++
 //    }
@@ -980,7 +974,7 @@ fun main(args: Array<String>) {
 //    println("Completed ${n * k} actions in $time ms")
 //}
 //var counter = AtomicInteger()
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    GlobalScope.massiveRun1 {
 //        counter.incrementAndGet()
 //    }
@@ -1003,7 +997,7 @@ fun main(args: Array<String>) {
 //}
 //val counterContext = newSingleThreadContext("CounterContext")
 //var counter = 0
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    GlobalScope.massiveRun1 {
 //        withContext(counterContext) {
 //            counter++
@@ -1028,7 +1022,7 @@ fun main(args: Array<String>) {
 //}
 //val counterContext = newSingleThreadContext("CounterContext")
 //var counter = 0
-//fun main() = runBlocking<Unit> {
+//fun base.main() = runBlocking<Unit> {
 //    CoroutineScope(counterContext).massiveRun1 {
 //            counter++
 //    }
@@ -1063,7 +1057,7 @@ fun main(args: Array<String>) {
 //    }
 //    println("Completed ${n * k} actions in $time ms")
 //}
-//fun main() = runBlocking {
+//fun base.main() = runBlocking {
 //    val counter = counterActor() // create the actor
 //    GlobalScope.massiveRun1 {
 //        counter.send(IncCounter)
